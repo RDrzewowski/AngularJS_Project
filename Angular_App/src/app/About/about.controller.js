@@ -3,17 +3,16 @@
 
   angular
     .module('angularProject')
-    .controller('MainController', MainController);
+    .controller('AboutController', AboutController);
 
   /** @ngInject */
-  function MainController($timeout, webDevTec, toastr) {
+  function AboutController($timeout, webDevTec, toastr) {
     var vm = this;
 
     vm.awesomeThings = [];
     vm.classAnimation = '';
     vm.creationDate = 1452000241743;
     vm.showToastr = showToastr;
-    vm.rok = 2000;
 
     activate();
 
@@ -36,7 +35,7 @@
         awesomeThing.rank = Math.random();
       });
     }
-
-       
-  }
+    
+}
+  
 })();

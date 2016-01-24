@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('angularApp')
+    .module('angularProject')
     .directive('acmeNavbar', acmeNavbar);
 
   /** @ngInject */

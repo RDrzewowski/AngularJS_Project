@@ -1,0 +1,81 @@
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+
+  <header class="mdl-layout__header">
+    <acme-navbar creation-date="users.creationDate"></acme-navbar>
+  </header>
+
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">Views</span>
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="#">Welcome</a>
+      <a class="mdl-navigation__link" href="#/users">Users</a>
+      <a class="mdl-navigation__link" href="#/about">About</a>
+    </nav>
+  </div>
+
+  <users class="mdl-layout__content">
+    <div class="page-content">
+
+  <center>
+    <br><br>    
+    <h3>Please input ID from which we shall start:</h3>
+
+      <form ng-submit="users.submit(users.form.firstName)" name="users.form">
+        <div class="mdl-textfield mdl-js-textfield">
+          <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample2" ng-model="users.form.firstName">
+          <label class="mdl-textfield__label" for="sample2">ID...</label>
+          <span class="mdl-textfield__error">Input is not a number!</span>
+        </div>
+
+      </form>
+      <button type="submit" ng-click="users.submit(users.form.firstName)" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
+      Update
+      </button>
+
+  <br><br>
+  </center>
+
+      <div class="mdl-grid">
+
+        <div class="mdl-cell mdl-cell--4-col" ng-repeat="user in users.userData | orderBy:'id'">
+          <div class="acme-card-square mdl-card mdl-shadow--2dp">
+            <div class="mdl-card__title">
+              <h2 class="mdl-card__title-text">{{ user.login }}</h2>
+            </div>
+            <br>
+            <div class="mdl-card__media-users">
+              <img ng-src="{{ user.avatar_url }}" alt="{{ user.login }}">
+            </div>
+            <div class="mdl-card__supporting-text">
+              ID: {{ user.id }}
+              <br>
+              Type: {{ user.type }}
+              <br>
+              <div ng-if="user.site_admin">
+              Site admin
+              </div>
+            </div>
+            <div class="mdl-card__actions mdl-card--border">
+              <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" ng-href="{{ user.html_url }}" target="_blank">
+                Website
+              </a>
+              <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" ng-href="#/users/{{ user.login }}">
+                User view
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </users>
+
+  <footer class="mdl-mini-footer">
+    <div class="mdl-mini-footer__right-section">
+      <div class="mdl-logo">
+        With ♥ thanks to the contributions of<acme-malarkey extra-values="['Yeoman', 'Gulp', 'Angular']"></acme-malarkey>
+      </div>
+    </div>
+  </footer>
+
+</div>

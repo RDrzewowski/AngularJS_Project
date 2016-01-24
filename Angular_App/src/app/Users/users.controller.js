@@ -3,19 +3,31 @@
 
   angular
     .module('angularProject')
-    .controller('MainController', MainController);
+    .controller('UsersController', UsersController);
 
   /** @ngInject */
-  function MainController($timeout, webDevTec, toastr) {
+  function UsersController($timeout, webDevTec, toastr, UsersData) {
     var vm = this;
 
     vm.awesomeThings = [];
     vm.classAnimation = '';
     vm.creationDate = 1452000241743;
     vm.showToastr = showToastr;
-    vm.rok = 2000;
+    vm.submit = submit;
+
+    UsersData(1).success(function(data){
+      vm.userData = data;
+    });
 
     activate();
+
+
+    function submit(dane){
+
+      UsersData(dane).success(function(data){
+      vm.userData = data;
+    });
+    }
 
     function activate() {
       getWebDevTec();
@@ -36,7 +48,7 @@
         awesomeThing.rank = Math.random();
       });
     }
-
-       
-  }
+    
+}
+  
 })();

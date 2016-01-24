@@ -93,6 +93,34 @@ main {
       height: 100px;
     }
   }
+  
+  > .mdl-card__media-users {
+    color: #fff;
+    background: none;
+    text-align: center;
+    img {
+      height: 300px;
+    }
+  }
+  
+   > .mdl-card__media-user {
+    color: #fff;
+    background: none;
+    text-align: center;
+    img {
+      height: 500px;
+    }
+  }
+  
+> .mdl-card__media-author {
+    color: #fff;
+    background: none;
+    text-align: center;
+    img {
+      height: 550px;
+    }
+  }
+
 }
 
 /**

@@ -3,7 +3,7 @@
   'use strict';
 
   angular
-    .module('angularApp')
+    .module('angularProject')
     .constant('malarkey', malarkey)
     .constant('moment', moment);
 

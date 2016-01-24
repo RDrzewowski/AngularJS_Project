@@ -1,0 +1,61 @@
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+
+  <header class="mdl-layout__header">
+    <acme-navbar creation-date="about.creationDate"></acme-navbar>
+  </header>
+
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">Views</span>
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="#">Welcome</a>
+      <a class="mdl-navigation__link" href="#/users">Users</a>
+      <a class="mdl-navigation__link" href="#/about">About</a>
+    </nav>
+  </div>
+
+  <about class="mdl-layout__content">
+    <div class="page-content">
+
+      <div class="mdl-grid">
+      <div class="mdl-cell mdl-cell--2-col"></div>
+        <div class="mdl-cell mdl-cell--8-col">
+          <div class="acme-card-square mdl-card mdl-shadow--2dp">
+            <div class="mdl-card__title">
+              <h2 class="mdl-card__title-text">Rafał Drzewowski</h2>
+            </div>
+            <br>
+            <div class="mdl-card__media-author">
+              <img ng-src="assets/images/author.jpg" alt="Rafał Drzewowski">
+            </div>
+            <div class="mdl-card__supporting-text">
+            <h4>Age: 20</h4>
+            <h4>Nationality: Polish</h4>
+            <h4>Hobbies: Computers, computer games, tennis, skiing and snowboarding</h4>
+            <h4>University: West Pomeranian University of Technology (10.2014 - present, Szczecin)</h4>
+            <h4>Branch of study: Computer Science</h4>
+            <h4>Specialization: Engineering of digitization</h4>
+            </div>
+            <div class="mdl-card__actions mdl-card--border">
+              <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" ng-href="https://github.com/RDrzewowski" target="_blank">
+                Website
+              </a>
+              <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" ng-href="#/users/RDrzewowski">
+                User view
+              </a>
+            </div>
+          </div>
+        </div>               
+      </div>  
+
+    </div>
+  </about>
+
+  <footer class="mdl-mini-footer">
+    <div class="mdl-mini-footer__right-section">
+      <div class="mdl-logo">
+        With ♥ thanks to the contributions of<acme-malarkey extra-values="['Yeoman', 'Gulp', 'Angular']"></acme-malarkey>
+      </div>
+    </div>
+  </footer>
+
+</div>

@@ -3,17 +3,20 @@
 
   angular
     .module('angularProject')
-    .controller('MainController', MainController);
+    .controller('UserInfoController', UserInfoController);
 
   /** @ngInject */
-  function MainController($timeout, webDevTec, toastr) {
+  function UserInfoController($timeout, webDevTec, toastr, UserData, $stateParams) {
     var vm = this;
 
     vm.awesomeThings = [];
     vm.classAnimation = '';
     vm.creationDate = 1452000241743;
     vm.showToastr = showToastr;
-    vm.rok = 2000;
+
+    UserData($stateParams.login).success(function(data){
+      vm.userData = data;
+    });
 
     activate();
 
@@ -36,7 +39,7 @@
         awesomeThing.rank = Math.random();
       });
     }
-
-       
-  }
+    
+}
+  
 })();
