@@ -1,91 +1,51 @@
-<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+<userinf>
+  <div class="page-content">
 
-  <header class="mdl-layout__header">
-    <acme-navbar creation-date="userinf.creationDate"></acme-navbar>
-  </header>
+    <div class="mdl-grid" ng-if="userinf.userData.login != null">
 
-  <div class="mdl-layout__drawer">
-    <span class="mdl-layout-title">Views</span>
-    <nav class="mdl-navigation">
-      <a class="mdl-navigation__link" href="#">Welcome</a>
-      <a class="mdl-navigation__link" href="#/users">Users</a>
-      <a class="mdl-navigation__link" href="#/about">About</a>
-    </nav>
-  </div>
-
-<userinf class="mdl-layout__content">
-    <div class="page-content">
-
-      <div class="mdl-grid" ng-if="userinf.userData.login != null">
-
-        <div class="mdl-cell mdl-cell--4-col">
-          <div class="acme-card-square mdl-card mdl-shadow--2dp">
-            <div class="mdl-card__title">
-              <h2 class="mdl-card__title-text">{{ userinf.userData.login }}</h2>
-            </div>
+      <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell mdl-cell--8-col-tablet">
+        <div class="acme-card-square mdl-card mdl-shadow--2dp">
+          <div class="mdl-card__title">
+            <h2 class="mdl-card__title-text">{{ userinf.userData.login }}</h2>
+          </div>
+          <br>
+          <div class="mdl-card__media-user">
+            <img ng-src="{{ userinf.userData.avatar_url }}" alt="{{ userinf.userData.login }}">
+          </div>
+          <div class="mdl-card__supporting-text">
+            ID: {{ userinf.userData.id }}
+            <br> Type: {{ userinf.userData.type }}
             <br>
-            <div class="mdl-card__media-user">
-              <img ng-src="{{ userinf.userData.avatar_url }}" alt="{{ userinf.userData.login }}">
-            </div>
-            <div class="mdl-card__supporting-text">
-              ID: {{ userinf.userData.id }}
-              <br>
-              Type: {{ userinf.userData.type }}
-              <br>
-              <div ng-if="userinf.userData.site_admin">
+            <div ng-if="userinf.userData.site_admin">
               Site admin
-              </div>
             </div>
-            <div class="mdl-card__actions mdl-card--border">
-              <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" ng-href="{{ userinf.userData.html_url }}" target="_blank">
+          </div>
+          <div class="mdl-card__actions mdl-card--border">
+            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" ng-href="{{ userinf.userData.html_url }}" target="_blank">
                 Website
               </a>
 
-            </div>
           </div>
         </div>
-        <div class="mdl-cell mdl-cell--1-col"></div>
-          <div class="mdl-cell mdl-cell--2-col">
-              <h3 ng-if="userinf.userData.name != null"><b>Name:</b></h3>
-              <h3 ng-if="userinf.userData.company != null"><b>Company:</b></h3>
-              <h3 ng-if="userinf.userData.blog != null"><b>Blog:</b></h3>
-              <h3 ng-if="userinf.userData.location != null"><b>Location:</b></h3>
-              <h3 ng-if="userinf.userData.email != null"><b>E-mail:</b></h3>
-              <h3 ng-if="userinf.userData.bio != null"><b>Bio:</b></h3>
-              <h3 ng-if="userinf.userData.public_repos != 0"><b>Public repositories:</b></h3>
-              <h3 ng-if="userinf.userData.public_gists != 0"><b>Public gists:</b></h3>
-              <h3 ng-if="userinf.userData.followers != 0"><b>Followers:</b></h3>
-              <h3 ng-if="userinf.userData.following != 0"><b>Following:</b></h3>
-              <h3><b>Created at:</b></h3>
-              <h3><b>Updated at:</b></h3>
-              <h3 ng-if="userinf.userData.hireable"><b>Hireable</b></h3>
-        </div>
-        <div class="mdl-cell mdl-cell--5-col">
-              <h3 ng-if="userinf.userData.name != null">{{ userinf.userData.name }}</h3>
-              <h3 ng-if="userinf.userData.company != null">{{ userinf.userData.company }}</h3>
-              <h3 ng-if="userinf.userData.blog != null"><a href="{{ userinf.userData.blog }}" target="_blank">{{ userinf.userData.blog }}</a></h3>
-              <h3 ng-if="userinf.userData.location != null">{{ userinf.userData.location }}</h3>
-
-              <h3 ng-if="userinf.userData.email != null"><a href="mailto:{{ userinf.userData.email }}" target="_top">{{ userinf.userData.email }}</a></h3>
-              <h3 ng-if="userinf.userData.bio != null">{{ userinf.userData.bio }}</h3>
-              <h3 ng-if="userinf.userData.public_repos != 0">{{ userinf.userData.public_repos }}</h3>
-              <h3 ng-if="userinf.userData.public_gists != 0">{{ userinf.userData.public_gists }}</h3>
-              <h3 ng-if="userinf.userData.followers != 0">{{ userinf.userData.followers }}</h3>
-              <h3 ng-if="userinf.userData.following != 0">{{ userinf.userData.following }} accounts</h3>
-              <h3>{{ userinf.userData.created_at | date }}</h3>
-              <h3>{{ userinf.userData.updated_at | date }}</h3>
-        </div>
-
       </div>
+      <div class="mdl-cell mdl-cell--1-col mdl-cell--1-col-tablet"></div>
+      <div class="mdl-cell mdl-cell--5-col-desktop mdl-cell mdl-cell--7-col-tablet ">
+        <h4 ng-if="userinf.userData.name != null"><b>Name:</b><br> &emsp; {{ userinf.userData.name }}</h4>
+        <h4 ng-if="userinf.userData.company != null"><b>Company:</b><br> &emsp; {{ userinf.userData.company }}</h4>
+        <h4 ng-if="userinf.userData.blog != null"><b>Blog:</b><br> &emsp; <a href="{{ userinf.userData.blog }}" target="_blank">{{ userinf.userData.blog }}</a></h4>
+        <h4 ng-if="userinf.userData.location != null"><b>Location:</b><br> &emsp; {{ userinf.userData.location }}</h4>
+        <h4 ng-if="userinf.userData.email != null"><b>E-mail:</b><br> &emsp; {{ userinf.userData.email }}</h4>
+        <h4 ng-if="userinf.userData.bio != null"><b>Bio:</b><br> &emsp; {{ userinf.userData.bio }}</h4>
+        <h4 ng-if="userinf.userData.public_repos != 0"><b>Public repositories:</b><br> &emsp; {{ userinf.userData.public_repos }}</h4>
+        <h4 ng-if="userinf.userData.public_gists != 0"><b>Public gists:</b><br> &emsp; {{ userinf.userData.public_gists }}</h4>
+        <h4 ng-if="userinf.userData.followers != 0"><b>Followers:</b><br> &emsp; {{ userinf.userData.followers }}</h4>
+        <h4 ng-if="userinf.userData.following != 0"><b>Following:</b><br> &emsp; {{ userinf.userData.following }} accounts</h4>
+        <h4><b>Created at:</b><br> &emsp; {{ userinf.userData.created_at | date }}</h4>
+        <h4><b>Updated at:</b><br> &emsp; {{ userinf.userData.updated_at | date }}</h4>
+        <h4 ng-if="userinf.userData.hireable"><b>Hireable</b></h4>
+      </div>
+
+
     </div>
+  </div>
 </userinf>
-
-  <footer class="mdl-mini-footer">
-    <div class="mdl-mini-footer__right-section">
-      <div class="mdl-logo">
-        With ♥ thanks to the contributions of<acme-malarkey extra-values="['Yeoman', 'Gulp', 'Angular']"></acme-malarkey>
-      </div>
-    </div>
-  </footer>
-
-</div>

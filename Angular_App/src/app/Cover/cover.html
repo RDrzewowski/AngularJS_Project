@@ -1,0 +1,38 @@
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+
+  <header class="mdl-layout__header">
+    <acme-navbar creation-date="cover.creationDate"></acme-navbar>
+  </header>
+
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">Views</span>
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="#">Welcome</a>
+      <a class="mdl-navigation__link" href="#/users">Users</a>
+      <a class="mdl-navigation__link" href="#/about">About</a>
+    </nav>
+  </div>
+
+
+<div class="mdl-layout__content">
+
+<div ui-view></div>
+
+</div>
+
+
+  <footer class="mdl-mini-footer">
+    <div class="mdl-mini-footer__left-section">
+        <div class="mdl-logo">ANGULAR PROJECT</div>
+        <ul class="mdl-mini-footer__link-list">
+          <li><a href="#">Welcome</a></li>
+          <li><a href="#/users">GitHub users</a></li>
+          <li><a href="#/about">Author</a></li>
+        </ul>
+      </div>
+      <div class="mdl-mini-footer__right-section">
+        <a href="https://github.com/" target="_blank" style="text-decoration: none"><div class="mdl-logo">GitHub</div></a>
+      </div>
+  </footer>
+  
+</div>

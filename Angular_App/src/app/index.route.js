@@ -9,7 +9,14 @@
   function routerConfig($stateProvider, $urlRouterProvider) {
     
     $stateProvider
-      .state('home', {
+      .state('cover', {
+        templateUrl: 'app/Cover/cover.html',
+        controller: 'CoverController',
+        controllerAs: 'cover'
+      })
+
+      $stateProvider
+      .state('cover.welcome', {
         url: '/',
         templateUrl: 'app/main/main.html',
         controller: 'MainController',
@@ -17,7 +24,7 @@
       })
 
     $stateProvider
-      .state('usersList', {
+      .state('cover.usersList', {
         url: '/users',
         templateUrl: 'app/Users/users.html',
         controller: 'UsersController',
@@ -25,7 +32,7 @@
       })
 
     $stateProvider
-      .state('aboutMe', {
+      .state('cover.aboutMe', {
         url: '/about',
         templateUrl: 'app/About/about.html',
         controller: 'AboutController',
@@ -33,7 +40,7 @@
       })
 
     $stateProvider
-      .state('userInfo', {
+      .state('cover.userInfo', {
         url: '/users/{login}',
         templateUrl: 'app/User/user.html',
         controller: 'UserInfoController',
