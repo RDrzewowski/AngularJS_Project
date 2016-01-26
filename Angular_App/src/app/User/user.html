@@ -34,7 +34,7 @@
         <h4 ng-if="userinf.userData.company != null"><b>Company:</b><br> &emsp; {{ userinf.userData.company }}</h4>
         <h4 ng-if="userinf.userData.blog != null"><b>Blog:</b><br> &emsp; <a href="{{ userinf.userData.blog }}" target="_blank">{{ userinf.userData.blog }}</a></h4>
         <h4 ng-if="userinf.userData.location != null"><b>Location:</b><br> &emsp; {{ userinf.userData.location }}</h4>
-        <h4 ng-if="userinf.userData.email != null"><b>E-mail:</b><br> &emsp; {{ userinf.userData.email }}</h4>
+        <h4 ng-if="userinf.userData.email != null"><b>E-mail:</b><br> &emsp; <a href="mailto:{{ userinf.userData.email }}">{{ userinf.userData.email }}</a></h4>
         <h4 ng-if="userinf.userData.bio != null"><b>Bio:</b><br> &emsp; {{ userinf.userData.bio }}</h4>
         <h4 ng-if="userinf.userData.public_repos != 0"><b>Public repositories:</b><br> &emsp; {{ userinf.userData.public_repos }}</h4>
         <h4 ng-if="userinf.userData.public_gists != 0"><b>Public gists:</b><br> &emsp; {{ userinf.userData.public_gists }}</h4>
